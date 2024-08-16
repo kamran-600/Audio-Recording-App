@@ -36,7 +36,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
+import org.json.JSONObject
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -118,6 +120,8 @@ class MainActivity : AppCompatActivity() {
 
             viewModel.insertContact(contactData)
 
+            saveAsJsonAnswers(contactData)
+
             finish()  // finish the current activity
 
 
@@ -125,6 +129,20 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    private fun saveAsJsonAnswers(contactData: DataEntity) {
+        val data = JSONObject().apply {
+            put("Q1", contactData.age)
+            put("Q2", contactData.imageUri)
+            put("recording", contactData.recording)
+            put("submit_time", contactData.submitTime)
+        }
+
+        val file =
+            File(getExternalFilesDir("Xurveykshan Jsons"), "answers${contactData.submitTime}.json")
+        file.writeText(data.toString())
+    }
+
 
     private fun bindObservers() {
 
