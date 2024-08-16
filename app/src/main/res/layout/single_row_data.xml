@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/column1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:text="Q1" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/column2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_weight="20"
+        android:gravity="center"
+        android:text="Q2" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/column3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_weight="40"
+        android:gravity="center"
+        android:text="Recording" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/column4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_weight="30"
+        android:gravity="center"
+        android:text="Submit Time" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
